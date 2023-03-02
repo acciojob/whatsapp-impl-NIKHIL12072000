@@ -64,13 +64,13 @@ public class WhatsappRepository {
 
     public int createMessage(String content){
         Message message=new Message(messageId,content);
-        messageId++;
+        messageId+=1;
         return messageId-1;
     }
 
     public int sendMessage(Message message, User sender, Group group) throws Exception{
             if(!groupUserMap.containsKey(group)){
-                throw new Exception("Group does not Exist");
+                throw new Exception("Group does not exist");
             }
             else{
                 List<User> sendersList=groupUserMap.get(group);
@@ -88,7 +88,7 @@ public class WhatsappRepository {
 
     public String changeAdmin(User approver, User user,Group group) throws Exception{
             if(!groupUserMap.containsKey(group)){
-                throw new Exception("Group does not Exist");
+                throw new Exception("Group does not exist");
             }
             else{
                 User admin=adminMap.get(group);
