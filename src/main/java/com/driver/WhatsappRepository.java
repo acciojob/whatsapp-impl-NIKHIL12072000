@@ -17,7 +17,7 @@ public class WhatsappRepository {
     private HashMap<Group, User> adminMap;
     private HashSet<String> userMobile;
     private int customGroupCount;
-    private int messageId=1;
+    private int messageId=0;
 
     public WhatsappRepository(){
         this.groupMessageMap = new HashMap<Group, List<Message>>();
