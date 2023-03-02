@@ -52,7 +52,7 @@ public class WhatsappRepository {
             return group;
         }
         else{
-            String groupName="Group "+(groupUserMap.size()+1);
+            String groupName="Group "+(customGroupCount+1);
             Group group=new Group(groupName,users.size());
             adminMap.put(group,users.get(0));
             groupUserMap.put(group,users);
@@ -65,7 +65,7 @@ public class WhatsappRepository {
     public int createMessage(String content){
         Message message=new Message(messageId,content);
         messageId+=1;
-        return messageId-1;
+        return message.getId();
     }
 
     public int sendMessage(Message message, User sender, Group group) throws Exception{
